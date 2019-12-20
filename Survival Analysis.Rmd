@@ -1,8 +1,8 @@
 ---
 title: "Attribution Modelling"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -55,16 +55,5 @@ Also, we need to calculate the conditional probability that event will occure wi
 
 
 
-```{r cars}
-summary(cars)
-```
+##  I'll add my codes of R and Python dash dasbord here soon
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
