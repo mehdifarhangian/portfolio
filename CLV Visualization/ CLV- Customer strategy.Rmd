@@ -1,17 +1,15 @@
 ---
 title: "CLV - Customer Strategy"
 author: "Mehdi Farhangian"
-date: "12/20/2019"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
 Marketers often ask how they can evaluate the effect of a new campaign or product on the retention of their customers. Is a new marketing campaign making our customers purchase more often over time? Or this marketing campaign is the root cause of our recent faster rate of customers’ fade?
 
@@ -93,7 +91,7 @@ Here we will investigate if a promotion affects the customer’s retention or no
 
 In order to apply the uplift modelling on the above-mentioned example, we need to add two columns to this dataset. Firstly we need to add a response variable. In our example, a response variable is a binary variable, where 1 shows that the return to the website after 60 days and 0 shows that the customer didn't return. Secondly, we add a binary variable that is called treatment in which 1 indicates whether a promotion is offered and 0 indicates that no promotion is offered to the customer.
 
-Uplift package in R
+## Uplift package in R
  
 
 In the Uplift package, five methods are implemented which are:
@@ -121,6 +119,6 @@ uplift_pred <- pred[, 1] - pred[, 2]
 
 
 
-So we can now compute uplift predictions. Also, we are able to profile our data based on the fitted model. More details can be seen in the documentation of Uplift package.
+So we can now compute uplift predictions. Also, we are able to profile our data based on the fitted model. More details can be seen in the documentation of Uplift package.I wrote this post initiallly [here](https://www.internetrix.com.au/blog/how-to-model-customers-retention-with-uplift-modelling/) adn I will add more visualisation and dashboard in this folder. 
 
 
