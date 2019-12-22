@@ -1,0 +1,59 @@
+---
+title: "Health Insurance CLV"
+author: "Mehdi Farhangian"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Definition of CLV 
+
+CLV is typically defined as the net present value that is the difference between revenue (R) and cost of services (c) multiplied by retention probability (p). 
+
+By using and example, I introduce a comprehensive model to measure CLV in Health Insurance. Let's start with the definition of CLV. 
+
+
+```{r CLV1, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("CLV1.png")
+```
+
+So, we need to add three values in the above formula which are: 
+
+* CF = Cash Flow for the next year 
+* r= Retention Rate 
+* d = discount rate 
+
+Also, in the above formula, $i$ represents each individual and $t$ represents the time unit (here is year). In this example, we use Markov Chain approach. So, cash flow and retention rate can be calculated together. 
+
+## CASH FLOW (CF) 
+
+Cash flow has tow components:
+
+* Cash In 
+  * Cross-Sell
+  * Up-Sell
+* Cash Out
+  * Claim cost
+  * Acquisition and Retention Cost
+  
+## CASH-IN FOR HEALTH INSURANCE 
+
+* Subscription: In this case subscription contains two values that are cross-sell and up-sell, and both can be measured by using a Markov chain approach. The values in the transition probability can be calculated using random forest or local segmentation approach. 
+
+To measure the transition probability in Markov Chain, we use a decision tree approach:
+
+
+
+```{r CLV2, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("CLV2.png")
+```
+
+Each of the probability in the transition probability measured using the decision tree approach. 
+## Cross-selling 
+
+For this example, we have 4 products that are [HI Car Home Pet Travel]  
+Our current customer has two products which are HI and Pet Insurance. The transition probability of customers in t=1 has been calculated as follows: 
+
+
+
+
