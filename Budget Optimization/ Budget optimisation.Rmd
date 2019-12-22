@@ -1,33 +1,36 @@
 ---
-title: "Budget Allocation"
+title: "Budget Optimisation in Digital Marketing"
 author: "Mehdi Farhangian"
-date: "12/21/2019"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
 In order to allocate budget for marketing channels, marketers often leverage the concept of relative importance to determine the relative contribution of each channel. Variable importance in regression refers to the quantification of an individual regressor’s contribution to multiple regression models. Common models to analyse relative importance include regression models, such as theShapley value regression, and pmvd (a newly proposed model byFledman) . In addition to multivariate linear regression, some other models such as random forest have received a lot of attention recently for assessment of variable importance.
 
 Despite the popularity of relative importance, these models cannot cover all the complexities we encounter in real life. Often, marketers have to include additional constraints necessitated by the market or an organisation's strategies. In this respect, we can use linear programming to allocate budget to each marketing activity and at the same time cover all the constraints.
 
-##Using Linear Programming for budget allocation
 
-In this article, using an example and linear programming, we explain how to allocate budget to marketing channels. In order to solve an optimisation problem using linear programming, we need a set of linear constraints. In mathematical terms, linear programming is a method in the field of operation management whose requirements are represented by linear relationships explained as follows:
+## Using Linear Programming for budget allocation
+
+In this article, using an example and linear programming, we explain how to allocate budget to marketing channels. In order to solve an optimisation problem using linear programming, we need a set of linear constraints. In mathematical terms, linear programming is a method in the field of operation management whose requirements are represented by linear relationships explained as follows
 
 Maximise the objective function (such as maximum profit or lowest cost)
-$C^T x = \sum c_i x_i$
-Subject to set of linear constraints
-$Ax≤b$
 
-$x_i≥0$  for each $i$
-Here, $c_i$ represents Return-On-Investment (ROI) and $x$ represents the amount invested in each asset and the set of constraints are presented in $A$ matrix. Linear programming is solved with the simplex algorithm.
+$C^T x = \sum c_i x_i$
+
+Subject to set of linear constraints
+
+$Ax \le b$
+
+$x_i \geq 0$ for each $i$
+
+Here, $C_i$ represents Return-On-Investment (ROI) and $x$ represents the amount invested in each asset and the set of constraints are presented in $A$ matrix. Linear programming is solved with the simplex algorithm.
 
 
 As an example, let's say we have five marketing channels as follows:
@@ -38,36 +41,45 @@ As an example, let's say we have five marketing channels as follows:
 * Facebook CPC
 * Google Display
 
+
 Constraints need to be expressed in a common format as linear inequalities, i.e. for the $j$ constraint:
 
-$x_1 +  x_2 +  x_3 +  x_4 +  x_5 \le b_j$
+$X_1 + X_2 + X_3 + x_4 + x_5 \le b_j$
 
-The set of linear constraints is listed as follows:
 
-First constraint: The total budget is $100,000.
-$x_1 + x_2 + x_3 + x_4 + x_5 ≤100,000$
+The set of linear constraints is listed as follows
+
+First constraint: The total budget is  USD 100,000.
+
+$x_1 + X_2 + x_3 + x_4 + x_5 \le 100000$
 
 Second constraint: in this example we stipulate that the TV advertisement budget must not exceed 58% of the whole budget, so
-$x_1 ≤ 0.58 * (x_1 + x_2 + x_3 + x_4 + x_5)$
 
-That is expressed as:
+$x_1 \le 0.58 * (x_1 + x_2 + x_3 + x_4 + x_5)$
 
-$0.42 x_1 − 0.58 x_2 − 0.58 x_3 − 0.58 x_4 − 0.58 x_5 ≤ 0$
 
-Third constraint: sum of Google / CPC and TV advertisement budget must not exceed 80% of the whole budget
+That is expressed as
 
-$(x_1 + x_2) ≤ 0.8 (x_1 + x_2 + x_3 + x_4 + x_5)$
+$0.42 x_1 - 0.58 x_2 - 0.58 x_3 - 0.58 x_4 - 0.58 x_5\le 0$
 
-$0.2 x_1 + 0.2 x_2 − 0.8 x_3 − 0.8 x_4 − 0.8 x_5 ≤ 0$
 
-Fourth constraint: Some of Twitter / CPC, Google CPC and Google Display budget must not exceed 30% of the whole budget
 
-$(x_2 + x_3 + x_5) ≤ 0.3 (x_1 + x_2 + x_3 + x_4 + x_5)$
+Third constraint: sum of Google CPC and TV advertisement budget must not exceed 80% of the whole budget.
 
-$− 0.3 x_1 + 0.7 x_2 + 0.7 x_3 − 0.3 x_4 − 0.7 x_5 ≤ 0$
-Fifth Constraint: Facebook / CPC budget must not exceed $10,000
+$(x_1 + x_2) \le 0.8 (x_1 + x_2 + x_3 + x_4 + x_5)$
 
-$x_4 ≤ 10000$
+$0.2 x_1 + 0.2 x_2 - 0.8 x_3 - 0.8 x_4 - 0.8 x_5 \le 0$
+
+Fourth constraint: Some of Twitter CPC, Google CPC and Google Display budget must not exceed 30% of the whole budget
+
+$(x_2 + x_3 + x_5) \le 0.3 (x_1 + x_2 + x_3 + x_4 + x_5)$
+
+$-0.3 x_1 + 0.7 x_2 + 0.7 x_3 - 0.3 x_4 - 0.7 x_5 \le 0$
+
+
+Fifth Constraint: Facebook  CPC budget must not exceed USD 10,000 
+
+$x_4\le 1000$
 
 
 Also, ROI of each channel is measured based on the historical data. When measuring ROI, be alert to the attribution of each channel and the risk of relying only on the last touchpoint in the customers' journey which can cause overestimation or underestimation of the real value of the channels. The ROI on each channel is:
@@ -80,13 +92,22 @@ We encode ROI of channels in $c^t$ vector and we will have
 
 $C^T = (0.08, 0.12, 0.07 , 0.11, 0.04)$
 
-We put all the right-hand side of the constraints into the vector b and all the left side into matrix $A$:
+We put all the right hand side of the constraints into the vector b and all the left side into matrix $A$:
 
 $B = (100, 0,0,0,10)$
 
-$A= \left(\begin{array}{cc}  1 & 1 & 1 & 1 & 1\\0.72 & -0.28 & -0.28 & -0.28 & -0.28\\-0.22 & 0.78 & -0.22 & -0.22 & -0.22\\ -0.2 & -0.2 & 0.8 & -0.2 & -0.2\\ -0.16 & -0.16 & -0.16 & 0.84 & -0.16\\ -0.14 & -0.14 & -0.14 & -0.14 & 0.86 \end{array}\right)$
+
+$A=\begin{bmatrix} 
+1 & 1 & 1 & 1 & 1\\
+0.72 & -0.28 & -0.28 & -0.28 & -0.28\\
+-0.22 & 0.78 & -0.22 & -0.22 & -0.22\\
+-0.2 & -0.2 & 0.8 & -0.2 & -0.2\\
+-0.16 & -0.16 & -0.16 & 0.84 & -0.16\\
+-0.14 & -0.14 & -0.14 & -0.14 & 0.86
+\end{bmatrix}$
 
 ##Solving in R
+
 There are multiple pieces of software that can solve Linear Programming problems. We chose to use linprog
 
 ```{r}
@@ -106,9 +127,10 @@ solveLP(ROI, b, A, TRUE)
 
 
 
-In the result section, the objective function (maximum) tells us the maximum value of the objective function. As a result, we estimated the income of these channels around 14,967. The solution section gives us the optimal $x$ and the optimal amount of investment for each channel. In this example, the recommendation is to invest 48,333 in TV advertisements , 10,000 in Facebook CPC and $25,000 in Google Display. The constraints section tells us if the constraints hold or not. More details are in this documentation.
+In the result section, the objective function (maximum) tells us the maximum value of the objective function. As a result, we estimated the income of these channels around USD 14,967 . The solution section gives us the optimal $x$ and the optimal amount of investment for each channel. In this example, the recommendation is to invest 48,333 USD in TV advertisements, USD 10,000  in Facebook CPC and USD 25,000 in Google Display. The constraints section tells us if the constraints hold or not. More details are in this documentation.
 
 In Python, scipy.optimize.linprog from Scipy employs Simplex algorithm to solve linear programming.
 
-# Add the code for dash python here
+I wrote this post originally for Internetrix that can be found [here] (https://www.internetrix.com.au/blog/marketing-optimisation/) and I'm going to add a dashboard for Budget Optimisation in Github hwn I got some time.
 
+# Add the code for dash python here
