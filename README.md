@@ -25,6 +25,9 @@ In this project we are building a Decision Support System to determine the credi
 It is critical to have accurate model that helps us predict the click through rate and also enables us to run if-then scenarios that
 discover the best features for a particular ad. In this project, I'm providing some guidelines for developing a model to predict click-through rate for ads without prior information. In addition, at the end of article
 
+## 5. [Baysian A B testing](https://github.com/mehdifarhangian/portfolio/tree/master/Bayesian%20A%20B%20testing)
+
+Here I have addes some mathematical point regarding A B testing. We are builing a dashboard that use A/B test data as the input and returns Bayesian results as well as their interpretations as the outcome. 
 
 
 
