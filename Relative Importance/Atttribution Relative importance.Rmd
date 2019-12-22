@@ -1,10 +1,9 @@
 ---
-title: "Attribution Relative Importance"
+title: "Attribution modelling and Relative Importance"
 author: "Mehdi Farhangian"
-date: "12/20/2019"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -19,7 +18,7 @@ By using multiple regression, we explore the extent to which each variable contr
 ## Relative Importance and Digital marketing
 
 
-Digital analysts are constantly asked to answer the question: What are the most important marketing channels our company should focus on? Determining the true importance of each marketing channel is called attribution modelling. You can read more about attribution modelling here, here and here. Attribution modelling has seen a lot of interest in measuring relative importance in recent years. Variable importance in regression refers to the quantification of an individual regressor’s contribution to multiple regression models. In this article, we shed light on the black box model of Google 360 by investigating different regression models, such as the Shapley value regression and pmvd ( a newly proposed model by Fledman) and several other models. In addition to multivariate linear regression, some other models such as random forest have received a lot of attention recently for assessment of variable importance.
+Digital analysts are constantly asked to answer the question: What are the most important marketing channels our company should focus on? Determining the true importance of each marketing channel is called attribution modelling. You can read more about attribution modelling here, here and here. Attribution modelling has seen a lot of interest in measuring relative importance in recent years. Variable importance in regression refers to the quantification of an individual regressor’s contribution to multiple regression models. In this article, I shed light on the black box model of Google 360 by investigating different regression models, such as the Shapley value regression and pmvd (a relatively new proposed model by Fledman) and several other models. In addition to multivariate linear regression, some other models such as random forest have received a lot of attention recently for assessment of variable importance. Please note I wrote this article initially [here](https://www.internetrix.com.au/blog/an-introductory-guide-for-applying-relative-importance-theories-in-digital-marketing/)
 
 ## zero-order correlation
 
@@ -34,6 +33,12 @@ R has a package for calculating relative importance. Ulrike Grömping has writte
 
 Using this package, we can build a model that measures the relative importance of the factors with different metrics. In the following example, we measure the relative importance of five channels on conversions with 7 metrics.
 
+
+
+```{r RI, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("RI.png")
+```
+
 ## Shapley value
 
 Google's Data-Driven Attribution is based on a method known as the Shapley Value, but what is this?
@@ -46,11 +51,7 @@ Clearly, it is not just what factors are involved, but how they interact, and in
 
 Going back to a digital analytics example, we can see a comparison of two pathways below. Including 'Display' at this point in the sequence increases the likelihood of a purchase by 50%. Therefore we can attribute this increase to 'Display' despite it being only a link in the sequence. To get the complete credit given to 'Display', more comparisons need to be made with 'Display' occurring at different locations and working with different touch points.
 
-For the technically inclined, the formula to calculate the Shapley value for a given contributor is:
 
-Add the formula 
-
-To translate this: For any given marketing touch point (e.g. Display), calculate the payoff achieved where 'Display' is part of the pathway sequence. Subtract from this the marginal contributions made by all the touch points preceding it. Add these marginal contributions up across all permutations containing 'Display' and divide by the total number of possible pathway permutations. This gives us our weighted marginal contribution to the overall conversions for a given marketing channel.
 
 # I'll Add r codes and vidualisations here 
 
