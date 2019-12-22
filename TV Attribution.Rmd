@@ -1,5 +1,5 @@
 ---
-title: "TV attribution"
+title: "TV Advertisement Attribution"
 author: "Mehdi Farhangian"
 output:
   pdf_document: default
@@ -47,7 +47,7 @@ I measure the impact of an event (such as a TV advertisement) on the traffic of 
 knitr::include_graphics("TV.png")
 ```
 
-Under the hood, we consider the web traffic as our response time series and we assume the pre-advertisment/intervention period as 24 hours. Based on a time series over the last 24 hours, we measure what would have happened in the subsequent minutes. We then compare our results with real results for the session starting after the TV advertisement.
+Under the hood, we consider the web traffic as our response time series and we assume the pre-advertisment/intervention period as 24 hours. Based on a time series over the last 24 hours, we measure what would have happened in the subsequent minutes. Then we can compare our results with real results for the session starting after the TV advertisement.
 
 
 In the above graph, the vertical dashes show the duration of the TV advertisement. The blue dot points indicate the number of sessions predicted based on the session trend. The black line is what actually happened. Comparing the blue and black lines lets us see the effect of TV ads. Technically speaking, we can see the response variable hitting an average value of approximately 54 during the post-advertisement/intervention period. This strongly contrasts with what we would have expected in the absence of an advertisement/intervention, where we would have predicted an average response of 48. Subtracting this prediction from the observed response yields an estimate of 6 for the causal effect the advertisement had on the response variable.
