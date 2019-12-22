@@ -1,8 +1,8 @@
 ---
 title: "Attribution Modelling"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -18,12 +18,13 @@ If you are in the digital marketing industry, you know that everyone talks about
 
 I have explianed different approachs for solving attiubtion problems in the below posts: 
 
-Here I'm going to wite about survival analysis and how it can be used in defining the right credit for each marketing channel. 
+Here I'm going to wite about survival analysis and how it can be used in defining the right credit for each marketing channel. As I mentioned before, I wrote this article initially [here](https://www.internetrix.com.au/blog/let-your-attribution-model-to-tell-a-story/)
 
 Survival analysis is a popular approach among biostatisticians for analyzing the expected duration of time until one or more events happen, such as death in biological organisms. However, this statistical technique attracted scientists and technicians in other domains. Survival analysis is called reliability theory or reliability analysis in engineering, duration analysis in economics, and event history analysis in sociology. Two example questions that survival analysis attempts to answer are listed as follows:
 
-What is the proportion of a population which will survive past a certain time?
-How do particular events or treatments increase or decrease the probability of survival?
+* What is the proportion of a population which will survive past a certain time?
+* How do particular events or treatments increase or decrease the probability of survival?
+
 In survival analysis, death or failure is considered an 'event'; traditionally only a single event occurs for each subject, after which the organism or mechanism is dead or broken. Chandler-Pepelnjak (2010) proposed to use survival analysis for marketing attribution analysis. He suggested that each event in a customer's’ journey gives an indication of whether the journey is still alive. And when the customer converts to purchase, the journey then 'dies'.
 
 If you are into marketing do you want to know how long your customers are likely to stay with you; or whether you customers fall into a certain demographic profile, or whether those who enter your website via a certain channel or campaign tend to convert more quickly?
@@ -50,6 +51,9 @@ Also, we need to calculate the conditional probability that event will occure wi
  $S(t) = \exp\left(- \int_{0}^{t} h(u) du \right)$
  
  
+```{r Survival, echo=FALSE, fig.cap="", out.width = '100%'}
+knitr::include_graphics("Survival.png")
+```
 
 
 
