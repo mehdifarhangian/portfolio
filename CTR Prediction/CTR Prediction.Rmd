@@ -1,7 +1,6 @@
 ---
 title: "Click Through Rate Prediction"
 author: "Mehdi Farhangian"
-date: "12/21/2019"
 output:
   pdf_document: default
   html_document: default
@@ -42,7 +41,7 @@ Where
  
 
 
-Where $f_i (ad)$is the value of the ith feature for the ad and $W_i$ is the learned weight for the feature. We should allocate the largest part of our time doing model development to feature selection. This is an ongoing task always open to improvement. A dtailed explaination of this approach with some examples can be seen in this article:
+Where $f_i (ad)$is the value of the ith feature for the ad and $W_i$ is the learned weight for the feature. We should allocate the largest part of our time doing model development to feature selection. This is an ongoing task always open to improvement. A dtailed explaination of this approach with some examples can be seen in [this article] (https://www.microsoft.com/en-us/research/publication/predicting-clicks-estimating-the-click-through-rate-for-new-ads/).Also, I have provided more information [here](https://www.internetrix.com.au/blog/click-through-rate-prediction/).
 
 
 Based on my experience, the keyword alone is not adequate to predict the click-through rate. So, we need to find out the features that help us better estimate click through rate. To do this, we recommend exploration of four categories: Appearance, Attention Capture, Landing Page Quality and Relevance described as follows:
