@@ -1,7 +1,6 @@
 ---
-title: "CLV"
+title: "CLV Measurement Tutorial"
 author: "Mehdi Farhangian"
-date: "12/21/2019"
 output:
   pdf_document: default
   html_document: default
@@ -13,18 +12,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The best marketing strategy is to maintain customers who are profitable and remain loyal for a Lifetime. In order to obtain and maintain these customers, we need to measure an important metric that is called customer lifetime value. Calculating lifetime value has had lots of applications such as performance measurement, targeting customers, marketing resources allocation, product offering, pricing, and customer segmentation.
 
-However, as we explained in our previous article, it is easier said than done and almost everyone is doing it wrong. In order to measure calculate CLV, Gupta et al. described six modelling approaches:
+However, as I explianed previously it is easier said than done and almost everyone is doing it wrong. In order to measure calculate CLV, Gupta et al. described six modelling approaches:
 
 * RFM Models: Which are models based on Recency, Frequency, and Monetary.
 * Probability Models: Which are models based on Pareto/NBD model and Markov chains.
-* Econometric Models: Which are models based on Pareto/NBD in conjunction with some factors such as customer acquisition, customer * *  * retention, and customer margin and expansion.
+* Econometric Models: Which are models based on Pareto/NBD in conjunction with some factors such as customer acquisition, customer  retention, and customer margin and expansion.
 * Persistence Models: Which are models based on modelling the behaviour of its components  Which are acquisition, retention, and cross-selling.
 * Computer Science Models: Which are models based on some theories such as utility theory.
 * Diffusion/Growth Models: Which are models based on customer equity (CE).
 
-RFM has been used in marketing to predict customer behaviour for more than 50 years and is widely known as one of the most powerful techniques in marketing. In this article, ] provide an extended framework in which customers can be clustered in RFM segments, and customers' lifetime value is calculated based on these clusters.
+RFM has been used in marketing to predict customer behaviour for more than 50 years and is widely known as one of the most powerful techniques in marketing. In this article, I provide an extended framework in which customers can be clustered in RFM segments, and customers' lifetime value is calculated based on these clusters.
 
-##Step 1: Data preprocessing
+## Step 1: Data preprocessing
 
 Understanding and preparation of data is the most important and time-consuming part of customers’ lifetime value modelling. Usually, in our databases, we have data about the purchase behaviour of our customers, as well as sociodemographic data (e.g. age, gender, etc). The purchase behaviour is the main indicator of the lifetime value of customers and can be used to predict the customers' behaviour in the future. One of the advantages of RFM compared to other methods is its availability. A firm can use RFM analysis immediately and without requiring any additional data, as it has a database of its customers containing their purchase history.
 
@@ -44,11 +43,9 @@ Revenue = sample(100:500, size = N, replace = TRUE))
 
 The most popular approach for measuring the customer's’ lifetime value is RFM. RFM refers to a modelling technique that uses the following three factors from client records:
 
-Recency: Period since last purchase.
-Frequency: How many purchases an individual made during the observation period.
-Monetary: Cumulative total spent by client during observation period.
-Bruce Hardie developed a spreadsheet to implement RFM that is easy to use and can be seen here
-
+* Recency: Period since last purchase.
+* Frequency: How many purchases an individual made during the observation period.
+* Monetary: Cumulative total spent by client during observation period.
 
 
 Grouping the RFM can be done through clustering algorithms which are a form of unsupervised machine learning. A popular method for clustering is to use Hartigan’s Rule which “essentially compares the ratio of the within-cluster sum of squares for a clustering with k clusters and one with k + 1 clusters, accounting for the number of rows and clusters. If that number is greater than 10, then it is worth using k + 1 clusters.” . In the example below, we have two columns of frequency and recency of my customers and wish to cluster them based on these two factors by using R: 
@@ -63,9 +60,9 @@ After data preparation, we need to score our RFM variables. In this article, we 
 
 
 
-Distribution based Non-Contractual Models
+## Distribution based Non-Contractual Models
 
-An alternative to RFM is to use a more complicated approach which is the distributed based non-contractual model. Three stochastic models are the most popular ones for calculating CLV, namely BG/NBD, BG/BB, Pareto/NBD. A comparative summary of these models is in the following table:
+An alternative to RFM is to use a more complicated approach which is the distributed based non-contractual model. Three stochastic models are the most popular ones for calculating CLV, namely BG/NBD, BG/BB, Pareto/NBD. A comparative summary of these models represented in the following table:
 
 
 ```{r pressure2, echo=FALSE, fig.cap="A caption", out.width = '100%'}
@@ -80,12 +77,10 @@ Bruce Hardie has a number of excel spreadsheets and explanations for these model
 
 * Pareto/NBD Model
 
-An R package called BTYD can be used to calculate these models.
-
-In addition, Lifetimes is a Python library to calculate CLV. We use an example to show how this package can be used for measuring CLV. In this example you can use cdnow_customers.csv located in the datasets/ directory.
+These models are out of the scope of this article. An R package called BTYD can be used to calculate these models. In addition, Lifetimes is a Python library to calculate CLV. We use an example to show how this package can be used for measuring CLV. In this example you can use cdnow_customers.csv located in the datasets/ directory. More information about these models can be seen in [this article](https://www.internetrix.com.au/blog/how-to-model-customer-lifetime-value/).
 
 
-We need to convert our dataset into a dataset that contains Recency, Frequency and Monetary columns.
+Let's get back to our dataset. We need to convert our dataset into a dataset that contains Recency, Frequency and Monetary columns.
 
 ```{r}
 library(dplyr)
@@ -125,14 +120,11 @@ for (i in 2:15) wss[i] <- sum(kmeans(dfNorm,centers=i)$withinss)
 plot(1:15, wss, type="b", xlab="Number of Clusters", ylab="Within groups sum of squares")
 ```
 
-
-
  
 
 In this example, we see an ‘elbow’ at 5 clusters. By adding more clusters than that we get relatively smaller gains. So 5 clusters are chosen for this dataset.
 
  
-
 After finding the optimal number of clusters, we use the k-means method the cluster our dataset:
 
 ```{r}
@@ -144,6 +136,7 @@ mydataCluster$cluster <- as.factor(mydataCluster$cluster)
 
 
 ## Visualize the clusters
+
 Visualising the cluster provides more interpretability for a business. We can plot the results by selecting two of the variables as follows:
 
 ```{r}
@@ -163,6 +156,7 @@ knitr::include_graphics("CLVpair.png")
  
 
 ## Step 4: Generate rules
+
 This step is extremely valuable and the rules provided can play an important role in our strategies. However this step is not necessary, and if you are merely interested in calculating the lifetime value of customers, this step can be skipped and you can go to step 5.
 
 
@@ -219,4 +213,4 @@ $AC = \frac {CE - CN}{CS} * 100$
 * CS = Number of customers at the start of the period for each cluster
 
 
-
+Some parts of this article are taken from the article that I wtote on [Internetrix blog](https://www.internetrix.com.au/blog/blog-a-step-by-step-guide-to-calculate-your-customers-lifetime-value-using-clustering-2/)
