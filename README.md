@@ -20,7 +20,7 @@ In This project, I have introduced an novel approach to use Markov graph in attr
 
 In this project we are building a Decision Support System to determine the credit of each marketing channel by using a survival analysis approach. The article here explain the framework and mathodlogoy and w'll be updted in the future. 
 
-## 4. [Click Through Rate Prediction] (https://github.com/mehdifarhangian/portfolio/tree/master/CTR%20Prediction)
+## 4. [Click Through Rate Prediction](https://github.com/mehdifarhangian/portfolio/tree/master/CTR%20Prediction)
 
 It is critical to have accurate model that helps us predict the click through rate and also enables us to run if-then scenarios that
 discover the best features for a particular ad. In this project, I'm providing some guidelines for developing a model to predict click-through rate for ads without prior information. In addition, at the end of article
