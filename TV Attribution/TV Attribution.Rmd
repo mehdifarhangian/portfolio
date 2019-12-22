@@ -2,8 +2,8 @@
 title: "TV Advertisement Attribution"
 author: "Mehdi Farhangian"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 
