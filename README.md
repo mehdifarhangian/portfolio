@@ -3,7 +3,7 @@
 I have created this portfolio to explian my science journey and my learnings during this journey with a public audience. I'll try to communicate some technical stuffs in a simple language. I'll add my plog posts, codes, presentations and so on in the form of codes, Python dash, R shiny, iPython Notebooks, and R markdown files. Previously, I have written the description of some of these projects in Internetrix blog.
 
 
-# Content 
+# Contents 
 
 ## 1. [CLV Measurement Tutorial](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial) 
 
