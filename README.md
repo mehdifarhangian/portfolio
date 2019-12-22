@@ -28,7 +28,7 @@ discover the best features for a particular ad. In this project, I'm providing s
 
 ## 5. [Baysian A B testing](https://github.com/mehdifarhangian/portfolio/tree/master/Bayesian%20A%20B%20testing)
 
-Here I have addes some mathematical point regarding A B testing. We are builing a dashboard that use A/B test data as the input and returns Bayesian results as well as their interpretations as the outcome. The introduction to A/B testing with some mathematical points can be access [here](https://github.com/mehdifarhangian/portfolio/tree/master/Bayesian%20A%20B%20testing) 
+Here I have addes some mathematical point regarding A B testing. We are builing a dashboard that use A/B test data as the input and returns Bayesian results as well as their interpretations as the outcome. The introduction to A/B testing with some mathematical points can be access [here](https://github.com/mehdifarhangian/portfolio/tree/master/Bayesian%20A%20B%20testing).
 
 ## 6. [Customised Strategy with CLV](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Visualization)
 
@@ -44,7 +44,7 @@ inference measured. It can be accessed [here](https://github.com/mehdifarhangian
 
 ## 8. [Marketing Budget Optimisation](https://github.com/mehdifarhangian/portfolio/tree/master/Budget%20Optimization)
 
-I used some guidlines to  use linear programming to allocate budget to each marketing activity and at the same time cover all the constraints. This can be accessed [here](https://github.com/mehdifarhangian/portfolio/blob/master/Budget%20Optimization/_Budget_optimisation.pdf) Also, I'm working on a simulation model that allows marketers to conduct various if-then seanrios. 
+I used some guidlines to  use linear programming to allocate budget to each marketing activity and at the same time cover all the constraints. This can be accessed [here](https://github.com/mehdifarhangian/portfolio/blob/master/Budget%20Optimization/_Budget_optimisation.pdf). Also, I'm working on a simulation model that allows marketers to conduct various if-then seanrios. 
 
 
 
