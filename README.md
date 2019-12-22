@@ -29,5 +29,21 @@ discover the best features for a particular ad. In this project, I'm providing s
 
 Here I have addes some mathematical point regarding A B testing. We are builing a dashboard that use A/B test data as the input and returns Bayesian results as well as their interpretations as the outcome. 
 
+## 6. [Customised Strategy with CLV](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Visualization)
+
+In order to determine the effect of a new product on the retention of customers, we should look for differences.
+This projuct introdues differnt visualisations that helps us to analysing differences in terms of acquisition channels or demographic characteristics (such as gender, age or geography) and so on. 
+
+I'm building a we-based app using Python dash library. Let me know if you are interested in collaboration. 
+
+## 7. [TV Advertisement Attribution](https://github.com/mehdifarhangian/portfolio/tree/master/TV%20Attribution)
+
+How can you measure the effect that TV advertising is having on web traffic and sales for your business? We have introduced a novel approach to measure the measure the impact of an event (such as a TV advertisement) on the traffic of your website by using causal
+inference measured.
+
+## 8. [Marketing Budget Optimisation](https://github.com/mehdifarhangian/portfolio/tree/master/Budget%20Optimization)
+
+I used some guidlines to  use linear programming to allocate budget to each marketing activity and at the same time cover all the constraints. This can be accessed [here](https://github.com/mehdifarhangian/portfolio/blob/master/Budget%20Optimization/_Budget_optimisation.pdf) Also, I'm working on a simulation model that allows marketers to conduct various if-then seanrios. 
+
 
 
