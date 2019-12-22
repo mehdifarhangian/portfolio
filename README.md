@@ -5,5 +5,27 @@ I have created this portfolio to explian my science journey and my learnings dur
 
 # Content 
 
-1. [CLV Measurement Tutorial](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial)
+## CLV Measurement Tutorial
+[CLV Measurement Tutorial](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial) In this project, in  I provide an extended tutorial that contains all the satges of CLV measurment. It can be useful for both students and practitioners.
+
+
+I'm going to extend this project by building a Shiny R app that can be used as a toy tool to test diffrent hypothesis and different if-then Senarios. Please let me know if you like to collaborate in this app. 
+
+## Markov Chain in Attribution and CLV modelling 
+
+[Markov Chain and Attribution modelling](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Attribution): In This project, I have introduced an novel approach to use Markov graph in attribution modelling, and showed how this approach can be customised by incorporating all the customers’ life cycles.
+
+## Survival Analysis in Digital Marketing 
+
+[Survival Analysis in Digital Marketing](https://github.com/mehdifarhangian/portfolio/tree/master/Attribution-Survival-Analysis) 
+
+In this project we are building a Decision Support System to determine the credit of each marketing channel by using a survival analysis approach. The article here explain the framework and mathodlogoy and w'll be updted in the future. 
+
+## Click Through Rate Prediction 
+
+It is critical to have accurate model that helps us predict the click through rate and also enables us to run if-then scenarios that
+discover the best features for a particular ad. In this project, I'm providing some guidelines for developing a model to predict click-through rate for ads without prior information. In addition, at the end of article
+
+
+
 
