@@ -7,7 +7,7 @@ I have created this portfolio to explian my science journey and my learnings dur
 
 ## 1. [CLV Measurement Tutorial](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial) 
 
-In this project,  I provide an extended tutorial that contains all the satges of CLV measurment. It can be useful for both students and practitioners. It can be access[here](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial). 
+In this project,  I provide an extended tutorial that contains all the satges of CLV measurment. It can be useful for both students and practitioners. [Link](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial). 
 
 
 I'm going to extend this project by building a Shiny R app that can be used as a toy tool to test diffrent hypothesis and different if-then Senarios. Please let me know if you like to collaborate in this app. 
