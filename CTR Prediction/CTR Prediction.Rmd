@@ -86,7 +86,7 @@ A user-specific feature captures the individual users’ interactions and an AdW
 
 The following graph of sample data compares the accuracy of our model without personalisation features (the red line), with the blue line which represents where personalisation features are included in the model. We can clearly see the accuracy of the the model increases markedly with the addition of personalisation features.
 
-```{r pressure, echo=FALSE, fig.cap="A caption", out.width = '100%'}
+```{r CRT, echo=FALSE, fig.cap="", out.width = '100%'}
 knitr::include_graphics("CTR.png")
 ```
 
