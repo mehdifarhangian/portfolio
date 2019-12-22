@@ -5,3 +5,5 @@ I have created this portfolio to explian my science journey and my learnings dur
 
 # Content 
 
+1. [CLV Measurement Tutorial](https://github.com/mehdifarhangian/portfolio/tree/master/CLV%20Calculation%20Tutorial)
+
