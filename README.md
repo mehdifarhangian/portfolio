@@ -1,6 +1,6 @@
 # Data Sience Portfolio
 
-I have created this portfolio to explain my science journey and my learnings during this journey with a public audience. I'll try to communicate some technical stuffs in a simple language. I'll add my blog posts, codes, presentations and so on in the form of codes, Python dash, R shiny, iPython Notebooks, and R markdown files. Previously, I have written the description of some of these projects in Internetrix blog. If you like to have a chat with me about the below projects or collaborations please reach out to me via mehdifarhangian@gmail.come.  
+I have created this portfolio to explain my science journey and my learnings during this journey with a public audience.In the notebooks, I'll try to communicate some technical stuffs in a simple language and for a wider audience. I'll add my blog posts, codes, presentations and so on in the form of codes, Python dash, R shiny, iPython Notebooks, and R markdown files. Previously, I have written the description of some of these projects in Internetrix blog. If you like to have a chat with me about the below projects or collaborations please reach out to me via mehdifarhangian@gmail.come.  
 
 
 # Contents 
